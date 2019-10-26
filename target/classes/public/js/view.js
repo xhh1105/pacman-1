@@ -12,22 +12,44 @@ function createApp(canvas) {
 
     var drawMap = function(mapArray) {
         // 0 is wall, 1 is free space
-        c.fillStyle = "black"
-        c.fillRect(0,0,891,261)
+        c.fillStyle = "black";
+        c.fillRect(0,0,891,261);
         c.strokeStyle = 'blue';
-        c.lineWidth = 2
+        c.lineWidth = 2;
         for (let y = 0; y < mapArray.length; y++) {
             for (let x = 0; x < mapArray[0].length; x++) {
-
+                if (mapArray[y][x] === '0' && mapArray[y][x-1] === '1' && (mapArray[y-1][x] === '1' || mapArray[y+1][x] === '0')) {
+                    c.strokeStyle = 'blue';
+                    c.beginPath();
+                    c.moveTo(x * unit, y * unit);
+                    c.lineTo(x * unit, (y+1) * unit);
+                    c.stroke();
+                    c.closePath();
+                }
+                if (mapArray[y][x] === '0' && x - 1 > 0 && y - 1 > 0 && x + 1 < mapArray[y].length && y + 1 < mapArray.length && (mapArray[y][x-1] === '0' || mapArray[y][x-1] === '2') && mapArray[y][x+1] === '0' && mapArray[y-1][x] === '2' && mapArray[y+1][x] === '0' && (mapArray[y+1][x+1] === '1' || mapArray[y+1][x-1] === '1')) {
+                    c.strokeStyle = 'blue';
+                    c.beginPath();
+                    c.moveTo(x * unit, y * unit);
+                    c.lineTo(x * unit, (y+1) * unit);
+                    c.stroke();
+                    c.closePath();
+                }
                 if (mapArray[y][x] === "0" && x + 1 < mapArray[y].length && (mapArray[y][x+1] === "0" || mapArray[y][x+1] === "6")) {
-                    c.strokeStyle = 'blue'
+                    if ((mapArray[y][x] ==='0' && mapArray[y][x-1] === '1' && mapArray[y+1][x] === '0' && mapArray[y-1][x] === '0')
+                        || (mapArray[y][x] === '0' && x - 1 > 0 && x + 1 < mapArray[y].length && y - 1 > 0 && y + 1 < mapArray.length && mapArray[y-1][x] === '2' && mapArray[y+1][x] === '0' && mapArray[y+1][x-1] === '1')) {
+                        continue;
+                    }
+                    c.strokeStyle = 'blue';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo((x + 1) * unit, y * unit);
                     c.stroke();
                     c.closePath();
                 }
-                if (mapArray[y][x] === "0" && y + 1 < mapArray.length && mapArray[y+1][x] === "0") {
+                else if (mapArray[y][x] === "0" && y + 1 < mapArray.length && mapArray[y+1][x] === "0") {
+                    if (mapArray[y][x] === '0' && y - 1 > 0 && mapArray[y-1][x] === '1' && x - 1 > 0 && x + 1 < mapArray[y].length && mapArray[y][x+1] !== '1' && mapArray[y][x-1] !== '1') {
+                        continue;
+                    }
                     c.strokeStyle = 'blue';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
@@ -36,7 +58,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "3" && x + 1 < mapArray[y].length && mapArray[y][x+1] === "3") {
-                    c.strokeStyle = 'red'
+                    c.strokeStyle = 'red';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo((x + 1) * unit, y * unit);
@@ -44,7 +66,12 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "3" && y + 1 < mapArray.length && mapArray[y+1][x] === "3") {
-                    c.strokeStyle = 'red'
+                    if (mapArray[y][x] === '3' && x - 1 > 0 && y - 1 > 0 && x + 1 < mapArray[y].length && y + 1 < mapArray.length &&
+                        ((mapArray[y][x-1] === '3' && mapArray[y][x+1] === '3' && mapArray[y-1][x] === '1') ||
+                        mapArray[y][x+1] === '3' && mapArray[y+1][x+1] === '3')) {
+                        continue;
+                    }
+                    c.strokeStyle = 'red';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo(x * unit, (y + 1) * unit);
@@ -52,7 +79,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "4" && x + 1 < mapArray[y].length && mapArray[y][x+1] === "4") {
-                    c.strokeStyle = 'yellow'
+                    c.strokeStyle = 'yellow';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo((x + 1) * unit, y * unit);
@@ -60,7 +87,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "4" && y + 1 < mapArray.length && mapArray[y+1][x] === "4") {
-                    c.strokeStyle = 'yellow'
+                    c.strokeStyle = 'yellow';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo(x * unit, (y + 1) * unit);
@@ -68,7 +95,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "5" && x + 1 < mapArray[y].length && mapArray[y][x+1] === "5") {
-                    c.strokeStyle = 'green'
+                    c.strokeStyle = 'green';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo((x + 1) * unit, y * unit);
@@ -76,7 +103,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "5" && y + 1 < mapArray.length && mapArray[y+1][x] === "5") {
-                    c.strokeStyle = 'green'
+                    c.strokeStyle = 'green';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo(x * unit, (y + 1) * unit);
@@ -84,7 +111,7 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "6" && x + 1 < mapArray[y].length && (mapArray[y][x+1] === "6" || mapArray[y][x+1] === "0" )) {
-                    c.strokeStyle = 'pink'
+                    c.strokeStyle = 'pink';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo((x + 1) * unit, y * unit);
@@ -92,17 +119,13 @@ function createApp(canvas) {
                     c.closePath();
                 }
                 if (mapArray[y][x] === "6" && y + 1 < mapArray.length && mapArray[y+1][x] === "6") {
-                    c.strokeStyle = 'pink'
+                    c.strokeStyle = 'pink';
                     c.beginPath();
                     c.moveTo(x * unit, y * unit);
                     c.lineTo(x * unit, (y + 1) * unit);
                     c.stroke();
                     c.closePath();
                 }
-                // if (mapArray[y][x] === "1") {
-                //
-                //     c.fillRect(x * unit, y * unit,3,3);
-                // }
             }
         }
     };

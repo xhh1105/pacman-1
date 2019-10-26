@@ -49,19 +49,19 @@ public class Game {
 
         Ghost ghost2 = new Ghost();
         ghost2.setColor("#F93");
-        ghost2.setLocation(new Point(37, 10));
+        ghost2.setLocation(new Point(37, 8));
         ghost2.setChasingStrategy(new NullChasingStrategy());
         ghosts[1] = ghost2;
 
         Ghost ghost3 = new Ghost();
         ghost3.setColor("#0CF");
-        ghost3.setLocation(new Point(36, 10));
+        ghost3.setLocation(new Point(36, 8));
         ghost3.setChasingStrategy(new NullChasingStrategy());
         ghosts[2] = ghost3;
 
         Ghost ghost4 = new Ghost();
         ghost4.setColor("#F9C");
-        ghost4.setLocation(new Point(34, 10));
+        ghost4.setLocation(new Point(35, 8));
         ghost4.setChasingStrategy(new NullChasingStrategy());
         ghosts[3] = ghost4;
 
