@@ -13,7 +13,7 @@ function createApp(canvas) {
     var drawMap = function(mapArray) {
         // 0 is wall, 1 is free space
         c.fillStyle = "black";
-        c.fillRect(0,0,891,261);
+        c.fillRect(0,0,1200,400);
         c.strokeStyle = 'blue';
         c.lineWidth = 2;
         for (let y = 0; y < mapArray.length; y++) {
@@ -143,7 +143,21 @@ function createApp(canvas) {
         c.lineTo(x * unit, y * unit);
         c.fill();
         c.closePath();
+    };
 
+    var drawLives = function(num) {
+        let x = 0;
+        let y = 18;
+        let direction = 0;
+        for (var i = 0; i < num; i++) {
+            x += 1;
+            c.fillStyle = '#FFE600';
+            c.beginPath();
+            c.arc(x * unit, y * unit, unit/2, (.5*direction+.20)*Math.PI,(.5*direction-.20)*Math.PI,false);
+            c.lineTo(x * unit, y * unit);
+            c.fill();
+            c.closePath();
+        }
     };
 
     var drawDots = function (objectsArray) {
@@ -225,6 +239,7 @@ function createApp(canvas) {
         drawGhosts: drawGhosts,
         drawFruits: drawFruits,
         drawDots: drawDots,
+        drawLives: drawLives,
         clear: clear,
         dims: {height: canvas.height, width: canvas.width}
     }
@@ -254,6 +269,24 @@ window.onload = function() {
          [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];*/
 
+    // 000000000000000000000000000000000000000000000000000000000000
+    // 011111111111111111111111111111111111111111111111111111111110
+    // 010000100000000010000000000000001000000001555100000010000010
+    // 010000102222222010000000000000001000000001525100000010000010
+    // 011111102000000011111111111111111111111111525111111111111110
+    // 000000102011111113333333144444441006660001525133333333310000
+    // 000000102010000013222223142222241022222201525132222222310000
+    // 111111102010002013233323142444241022222201525132222222311111
+    // 111111102011102013232323142424241022222201525132333333311111
+    // 111111102000002013233323142444241000000001525132311111111111
+    // 000000102222222013222223142222241111111111525132333333310000
+    // 000000100000000013333333144444441000000001555133333333310000
+    // 011111111111111111111111111111111022222201111111111111111110
+    // 010000010000000001001000000000001000000001000000010001000010
+    // 010222010222222201001022222222201111001111022222010201022010
+    // 010000010000000001001000000000001001001001000000010001000010
+    // 011111111111111111001111111111111001111001111111111111111110
+    // 000000000000000000000000000000000000000000000000000000000000
     // let ghosts = [{x: 39, y: 10, direction: 0, color: '#F00'},
     //     {x: 37, y: 10, direction: 0, color: '#F93'},
     //     {x: 35, y: 10, direction: 0, color: '#0CF'},
@@ -279,6 +312,8 @@ function loadGame() {
         app.drawGhosts(data.ghosts);
         app.drawFruits(data.fruits);
         app.drawDots(data.objectsMap);
+
+        app.drawLives(3);
     }, "json");
 }
 
@@ -294,6 +329,8 @@ function update() {
         app.drawGhosts(data.ghosts);
         app.drawFruits(data.fruits);
         app.drawDots(data.objectsMap);
+
+        app.drawLives(3);
     }, "json");
 }
 
