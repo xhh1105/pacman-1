@@ -1,0 +1,24 @@
+#Sat Oct 26 20:08:34 CDT 2019
+configuration*?=779274EDE638EF580BF8A37D735F22BA2C48CABB
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/NaiveChasingStrategy.java=1572138365183
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/aplacedobject/Fruit.java=1572138022791
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Dot.java=1572138365175
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/a/Pacman.java=1572138105477
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Ghost.java=1572138365181
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/controller/PacmanGameController.java=1572137573621
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/Game.java=1572138365173
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/NullChasingStrategy.java=1572138365188
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/aplacedobject/Ghost.java=1572138022787
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/aplacedobject/Dot.java=1572138022784
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Aobject.java=1572138365186
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Pacman.java=1572138365190
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/aplacedobject/Pacman.java=1572138022797
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/a/Aobject.java=1572138105475
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/DispatcherAdapter.java=1572137919034
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/IEscapingStrategy.java=1572033846000
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/IChasingStrategy.java=1572138365178
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/a/Ghost.java=1572138105471
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Fruit.java=1572138365185
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/a/Dot.java=1572138105468
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/Map.java=1572137705531
+/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/a/Fruit.java=1572138105473

@@ -14,6 +14,9 @@ public class DispatcherAdapter {
 
     }
 
+    /**
+     * Load game.
+     */
     public Game loadGame() {
         game = new Game();
         game.loadLevelOne();

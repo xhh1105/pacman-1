@@ -160,6 +160,52 @@ function createApp(canvas) {
         }
     };
 
+    var drawLemon = function() {
+        let x = 57
+        let y = 18
+        c.fillStyle = "#ecfe1f"
+        c.beginPath()
+        c.arc(x*unit , y*unit ,unit*0.5,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
+
+        c.fillStyle = "#7df833";
+        c.beginPath()
+        c.arc(x*unit , y*unit ,unit*0.4,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
+
+        c.lineWidth = 0.35
+        c.strokeStyle = "#e4f8da";
+        let lemon_r = unit * 0.3
+        let lemon_a = unit * x;
+        let lemon_b = unit * y;
+
+        c.beginPath()
+        c.moveTo(lemon_a+0.71*lemon_r,lemon_b-0.71*lemon_r)
+        c.lineTo(lemon_a-0.71*lemon_r,lemon_b+0.71*lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a-0.71*lemon_r,lemon_b-0.71*lemon_r)
+        c.lineTo(lemon_a+0.71*lemon_r,lemon_b+0.71*lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a,lemon_b-lemon_r)
+        c.lineTo(lemon_a,lemon_b+lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a-lemon_r,lemon_b)
+        c.lineTo(lemon_a+lemon_r,lemon_b)
+        c.closePath()
+        c.stroke()
+    }
+
     var drawDots = function (objectsArray) {
         c.fillStyle = "#F5B5DA";
         for(let y = 0; y <objectsArray.length; y++){
@@ -179,46 +225,230 @@ function createApp(canvas) {
 
             c.beginPath();
             // c.arc(fruit.location.x, fruit.location.y,3+this.times%2,0,2*Math.PI,true);
-            c.arc(fruit.location.x *  unit, fruit.location.y * unit, unit * 0.2 + time % 2 ,0,2*Math.PI,true);
+            c.arc(fruit.location.x *  unit, fruit.location.y * unit, unit * 0.3 + time % 2 ,0,2*Math.PI,true);
             c.fill();
             c.closePath();
 
     })};
 
+    var drawLemon = function() {
+        let x=55
+        let y=18
+        c.fillStyle = "#ecfe1f"
+        c.beginPath()
+        c.arc(x*unit , y*unit ,unit*0.5,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
 
+        c.fillStyle = "#7df833";
+        c.beginPath()
+        c.arc(x*unit , y*unit ,unit*0.4,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
 
+        c.lineWidth = 0.35
+        c.strokeStyle = "#e4f8da";
+        let lemon_r = unit * 0.3
+        let lemon_a = unit * x;
+        let lemon_b = unit * y;
+
+        c.beginPath()
+        c.moveTo(lemon_a+0.71*lemon_r,lemon_b-0.71*lemon_r)
+        c.lineTo(lemon_a-0.71*lemon_r,lemon_b+0.71*lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a-0.71*lemon_r,lemon_b-0.71*lemon_r)
+        c.lineTo(lemon_a+0.71*lemon_r,lemon_b+0.71*lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a,lemon_b-lemon_r)
+        c.lineTo(lemon_a,lemon_b+lemon_r)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(lemon_a-lemon_r,lemon_b)
+        c.lineTo(lemon_a+lemon_r,lemon_b)
+        c.closePath()
+        c.stroke()
+
+    }
+
+    var drawCherry = function() {
+        let x = 57
+        let y = 18
+        c.strokeStyle = 'green'
+        c.lineWidth = 1
+        c.beginPath()
+        c.moveTo(x*unit - unit * 0.25, y*unit - unit * 0.5)
+        c.lineTo(x*unit + unit*0.25, y * unit - unit *0.5)
+        c.closePath()
+        c.stroke()
+
+        c.strokeStyle = 'yellow'
+        c.lineWidth = 0.5
+        c.beginPath()
+        c.moveTo(x*unit , y*unit - unit * 0.5)
+        c.lineTo(x*unit - unit*0.5, y * unit + unit *0.5)
+        c.closePath()
+        c.stroke()
+
+        c.beginPath()
+        c.moveTo(x*unit , y*unit - unit * 0.5)
+        c.lineTo(x*unit + unit*0.5, y * unit + unit *0.5)
+        c.closePath()
+        c.stroke()
+
+        c.fillStyle = 'red'
+        c.beginPath()
+        c.arc(x*unit - unit *0.4, y*unit + unit *0.5,unit*0.25,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
+
+        c.beginPath()
+        c.arc(x*unit + unit *0.4, y*unit + unit *0.5,unit*0.25,0,2*Math.PI,false)
+        c.closePath()
+        c.fill()
+    }
+
+    var drawMelon = function() {
+        let x = 59
+        let y = 18
+        c.fillStyle = 'green'
+        c.beginPath()
+        c.moveTo(x*unit, y*unit - 0.5*unit)
+        c.lineTo(x*unit - unit*0.5, y * unit +unit *0.5)
+        c.lineTo(x*unit+unit*0.5,y*unit + unit*0.5)
+        c.closePath()
+        c.fill()
+
+        c.fillStyle = 'red'
+        c.beginPath()
+        c.moveTo(x*unit, y*unit - 0.5*unit)
+        c.lineTo(x*unit - 0.4 *unit,y *unit + unit *0.3 )
+        c.lineTo(x*unit + 0.4 *unit,y *unit + unit *0.3 )
+        c.closePath()
+        c.fill()
+
+        c.fillStyle = 'black';
+        c.beginPath();
+        c.arc(x * unit,y * unit-unit*.21,unit*.05,0,2*Math.PI,false);
+        c.closePath();
+        c.fill()
+
+        c.beginPath()
+        c.arc(x * unit-unit*.2,y * unit + 0.2 *unit,unit*.05,0,2*Math.PI,false);
+        c.closePath()
+        c.fill()
+
+        c.beginPath()
+        c.arc(x * unit+unit*.2,y * unit + 0.2 *unit,unit*.05,0,2*Math.PI,false)
+        c.closePath();
+        c.fill();
+
+        c.beginPath()
+        c.arc(x * unit + 0.05 * unit,y * unit + 0.05 * unit,unit*.05,0,2*Math.PI,false)
+        c.closePath();
+        c.fill();
+    }
 
     var drawGhost = function(ghost) {
         let x = ghost.location.x;
         let y = ghost.location.y;
         let direction = ghost.direction;
 
-        //draw body
-        c.fillStyle = ghost.color;
-        c.beginPath();
-        c.arc(x* unit, y* unit, unit*.5,0,Math.PI,true);
 
-        c.lineTo(x* unit- unit *.5, y* unit + unit *.4);
-        c.quadraticCurveTo(x* unit-unit*.4,y* unit+unit*.5,x* unit-unit*.2,y* unit+unit*.3);
-        c.quadraticCurveTo(x* unit,y* unit+unit*.5,x* unit+unit*.2,y* unit+unit*.3);
-        c.quadraticCurveTo(x* unit+unit*.4,y* unit+unit*.5,x* unit+unit*.5,y* unit+unit*.4);
 
-        c.fill();
-        c.closePath();
 
-        //draw eyes
-        c.fillStyle = '#FFF';
-        c.beginPath();
-        c.arc(x * unit-unit*.15,y * unit-unit*.21,unit*.12,0,2*Math.PI,false);
-        c.arc(x * unit+unit*.15,y * unit-unit*.21,unit*.12,0,2*Math.PI,false);
-        c.fill();
-        c.closePath();
-        c.fillStyle = '#000';
-        c.beginPath();
-        c.arc(x * unit-unit*(.15-.04*_COS[direction]),y * unit-unit*(.21-.04*_SIN[direction]),unit*.07,0,2*Math.PI,false);
-        c.arc(x * unit+unit*(.15+.04*_COS[direction]),y * unit-unit*(.21-.04*_SIN[direction]),unit*.07,0,2*Math.PI,false);
-        c.fill();
-        c.closePath();
+        //Draw Ghosts (normal state and dumb state)-------
+        //-------------------------------
+        //if (normal) {
+            //draw body
+            c.fillStyle = ghost.color;
+            c.beginPath();
+            c.arc(x * unit, y * unit, unit * .5, 0, Math.PI, true);
+
+            c.lineTo(x * unit - unit * .5, y * unit + unit * .4);
+            c.quadraticCurveTo(x * unit - unit * .4, y * unit + unit * .5, x * unit - unit * .2, y * unit + unit * .3);
+            c.quadraticCurveTo(x * unit, y * unit + unit * .5, x * unit + unit * .2, y * unit + unit * .3);
+            c.quadraticCurveTo(x * unit + unit * .4, y * unit + unit * .5, x * unit + unit * .5, y * unit + unit * .4);
+
+            c.fill();
+            c.closePath();
+
+            //draw eyes
+            c.fillStyle = '#FFF';
+            c.beginPath();
+            c.arc(x * unit-unit*.15,y * unit-unit*.21,unit*.12,0,2*Math.PI,false);
+            c.arc(x * unit+unit*.15,y * unit-unit*.21,unit*.12,0,2*Math.PI,false);
+            c.fill();
+            c.closePath();
+
+            c.fillStyle = '#000';
+            c.beginPath();
+            c.arc(x * unit-unit*(.15-.04*_COS[direction]),y * unit-unit*(.21-.04*_SIN[direction]),unit*.07,0,2*Math.PI,false);
+            c.arc(x * unit+unit*(.15+.04*_COS[direction]),y * unit-unit*(.21-.04*_SIN[direction]),unit*.07,0,2*Math.PI,false);
+            c.fill();
+            c.closePath();
+       /* } else {*/
+
+            /*c.fillStyle = 'blue';
+            c.beginPath();
+            c.arc(x * unit, y * unit, unit * .5, 0, Math.PI, true);
+
+            c.lineTo(x * unit - unit * .5, y * unit + unit * .4);
+            c.quadraticCurveTo(x * unit - unit * .4, y * unit + unit * .5, x * unit - unit * .2, y * unit + unit * .3);
+            c.quadraticCurveTo(x * unit, y * unit + unit * .5, x * unit + unit * .2, y * unit + unit * .3);
+            c.quadraticCurveTo(x * unit + unit * .4, y * unit + unit * .5, x * unit + unit * .5, y * unit + unit * .4);
+
+            c.fill();
+            c.closePath();
+
+            c.strokeStyle = 'black';
+            c.lineWidth = 0.5
+            let r = unit * 0.12
+            let a = x * unit-unit*.15 ;
+            let b = y * unit-unit*.21
+            c.beginPath()
+            c.moveTo(a-0.71*r,b-0.71*r)
+            c.lineTo(a+0.71*r,b+ 0.71*r)
+            c.closePath()
+            c.stroke()
+
+            c.beginPath()
+            c.moveTo(a-0.71*r,b+0.71*r)
+            c.lineTo(a+0.71*r,b-0.71*r)
+            c.closePath()
+            c.stroke()
+
+            let a1 = x * unit+unit*.15 ;
+            let b1 = y * unit-unit*.21
+            c.beginPath()
+            c.moveTo(a1+0.71*r,b1-0.71*r)
+            c.lineTo(a1-0.71*r,b1+0.71*r)
+            c.closePath()
+            c.stroke()
+            c.beginPath()
+            c.moveTo(a1+0.71*r,b1+0.71*r)
+            c.lineTo(a1-0.71*r,b1-0.71*r)
+            c.closePath()
+            c.stroke()
+
+            //draw mouth
+            c.lineWidth = 1
+            c.strokeStyle = 'black'
+            c.beginPath()
+            c.moveTo(x*unit - unit * 0.25,y*unit + unit * 0.1)
+            c.lineTo(x*unit + unit * 0.25,y*unit + unit *0.1)
+            c.closePath()
+            c.stroke()
+        //}
+           //-------------------------------
+           */
     };
 
     var drawGhosts = function(ghosts) {
@@ -240,6 +470,9 @@ function createApp(canvas) {
         drawFruits: drawFruits,
         drawDots: drawDots,
         drawLives: drawLives,
+        drawLemon: drawLemon,
+        drawCherry:drawCherry,
+        drawMelon:drawMelon,
         clear: clear,
         dims: {height: canvas.height, width: canvas.width}
     }
@@ -312,8 +545,10 @@ function loadGame() {
         app.drawGhosts(data.ghosts);
         app.drawFruits(data.fruits);
         app.drawDots(data.objectsMap);
-
         app.drawLives(3);
+        app.drawLemon();
+        app.drawCherry();
+        app.drawMelon();
     }, "json");
 }
 
@@ -331,6 +566,9 @@ function update() {
         app.drawDots(data.objectsMap);
 
         app.drawLives(3);
+        app.drawLemon();
+        app.drawCherry();
+        app.drawMelon();
     }, "json");
 }
 

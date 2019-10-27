@@ -1,19 +1,14 @@
 package edu.rice.comp504.model.strategy;
 
-import edu.rice.comp504.model.APlacedObject.Ghost;
-import edu.rice.comp504.model.APlacedObject.Pacman;
+import edu.rice.comp504.model.objects.Ghost;
+import edu.rice.comp504.model.objects.Pacman;
 import edu.rice.comp504.model.Map;
-
-import java.util.Arrays;
 
 public class NaiveChasingStrategy implements IChasingStrategy {
     private int preDirection = 0; // right
 
     /**
-     * choose previous direction, which mimic going in straight line
-     * @param ghost
-     * @param pacman
-     * @param map
+     * Choose previous direction, which mimic going in straight line.
      */
     @Override
     public void chase(Ghost ghost, Pacman pacman, Map map) {

@@ -12,6 +12,9 @@ import java.util.stream.Stream;
 public class Map {
     private char[][] mapArray;
 
+    /**
+     * Constructor.
+     */
     public Map(int level) {
         if (level == 1) {
             loadMapLevelOne();
@@ -19,6 +22,9 @@ public class Map {
     }
 
 
+    /**
+     * Map loading method.
+     */
     public void loadMapLevelOne() {
         try {
             File file = new File("map-level-one.txt");
@@ -27,12 +33,6 @@ public class Map {
         }  catch (IOException e) {
             e.printStackTrace();
         }
-
-//        Arrays.stream(mapArray).forEach(line -> {
-//            new String(line).chars().forEach(cell -> System.out.print((char)(cell)));
-//            System.out.println();
-//        });
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -45,9 +45,7 @@ public class Map {
     }
 
     /**
-     * Return if the location is in not at obstacles, if is collision free
-     * @param location
-     * @return
+     * Return if the location is in not at obstacles, if is collision free.
      */
     public boolean isFreeAt(Point location) {
         int x = location.x;
@@ -57,9 +55,7 @@ public class Map {
     }
 
     /**
-     * Get valid directions moving from the location
-     * @param location
-     * @return right, down, left, up is valid or not
+     * Get valid directions moving from the location.
      */
     public boolean[] getValidDirectionAt(Point location) {
         assert isFreeAt(location);
@@ -70,7 +66,7 @@ public class Map {
         boolean[] directions = new boolean[4];
         // right
         if (x + 1 < mapArray[y].length) {
-            directions[0] = isFreeAt(new Point(x+1, y));
+            directions[0] = isFreeAt(new Point(x + 1, y));
         }
         // down
         if (y + 1 < mapArray.length) {
@@ -78,7 +74,7 @@ public class Map {
         }
         // left
         if (x - 1 >= 0) {
-            directions[2] = isFreeAt(new Point(x-1, y));
+            directions[2] = isFreeAt(new Point(x - 1, y));
         }
         // up
         if (y - 1 >= 0) {

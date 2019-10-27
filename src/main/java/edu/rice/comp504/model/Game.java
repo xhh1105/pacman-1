@@ -1,12 +1,10 @@
 package edu.rice.comp504.model;
 
-import edu.rice.comp504.model.APlacedObject.*;
+import edu.rice.comp504.model.objects.*;
 import edu.rice.comp504.model.strategy.NaiveChasingStrategy;
 import edu.rice.comp504.model.strategy.NullChasingStrategy;
 
 import java.awt.*;
-import java.io.IOException;
-import java.util.List;
 
 public class Game {
 
@@ -15,7 +13,7 @@ public class Game {
     private Pacman pacman;
     private Ghost[] ghosts;
     private Fruit[] fruits;
-    private APlacedObject[][] objectsMap;
+    private Aobject[][] objectsMap;
 
     // game statistics
     private int score;
@@ -27,12 +25,14 @@ public class Game {
 
 
     }
-
+    /**
+     * Load level one.
+     */
     public void loadLevelOne() {
         // init map
         map = new Map(1);
         char[][] mapArray = map.getMapArray();
-        objectsMap = new APlacedObject[mapArray.length][mapArray[0].length];
+        objectsMap = new Aobject[mapArray.length][mapArray[0].length];
 
         // init pacman
         pacman = new Pacman();
@@ -92,7 +92,7 @@ public class Game {
         }
 
 
-        for(int i = 0; i < mapArray.length; i++) {
+        for (int i = 0; i < mapArray.length; i++) {
             for (int k = 0; k < mapArray[i].length; k++) {
 
                 if (mapArray[i][k] == '1' && objectsMap[i][k] == null) {
@@ -105,17 +105,22 @@ public class Game {
     }
 
     /**
-     * Update all the ghosts' location
+     * Update all the ghosts' location.
      */
     public void update() {
-        for(Ghost ghost: ghosts) {
+        for (Ghost ghost: ghosts) {
             ghost.getChasingStrategy().chase(ghost, pacman, map);
         }
     }
 
 
+    /**
+     * Move Pacman.
+     */
     public void pacmanMove(int direction) {
-        if (direction > 3 || direction < 0) return;
+        if (direction > 3 || direction < 0) {
+            return;
+        }
         // valid check
         Point directionVec = null;
         if (direction == 0) {

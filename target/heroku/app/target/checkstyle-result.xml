@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/controller/PacmanGameController.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/Map.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Aobject.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Ghost.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Pacman.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Dot.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/objects/Fruit.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/Game.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/DispatcherAdapter.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/NaiveChasingStrategy.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/IEscapingStrategy.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/NullChasingStrategy.java">
+</file>
+<file name="/Users/xinghao/COMP504/pacman-1/src/main/java/edu/rice/comp504/model/strategy/IChasingStrategy.java">
+</file>
+</checkstyle>
